@@ -1,6 +1,7 @@
 const state = {
   data: null,
   selectedDate: null,
+  calendarFilter: "all",
 };
 
 const generatedAt = document.getElementById("generatedAt");
@@ -8,6 +9,8 @@ const windowDays = document.getElementById("windowDays");
 const dayHeadline = document.getElementById("dayHeadline");
 const dayCounts = document.getElementById("dayCounts");
 const dayQuickPoints = document.getElementById("dayQuickPoints");
+const calendarNote = document.getElementById("calendarNote");
+const calendarFilterBar = document.getElementById("calendarFilterBar");
 const calendarGrid = document.getElementById("calendarGrid");
 const rollingHeadline = document.getElementById("rollingHeadline");
 const rollingOverview = document.getElementById("rollingOverview");
@@ -18,6 +21,13 @@ const eventBoardTitle = document.getElementById("eventBoardTitle");
 const eventBoardNote = document.getElementById("eventBoardNote");
 const eventSections = document.getElementById("eventSections");
 const citationList = document.getElementById("citationList");
+
+const calendarFilters = [
+  { key: "all", label: "全部", note: "显示每天事件总数，点击后跳到当天事件模块。" },
+  { key: "competitor", label: "竞品", note: "只看竞品与对标产品动作，颜色深浅按竞品事件数分级。" },
+  { key: "demand", label: "需求", note: "只看客户需求与政策信号，方便快速判断需求强弱。" },
+  { key: "opportunity", label: "机会", note: "只看商机与事件机会，方便优先查看值得跟进的日期。" },
+];
 
 function escapeHtml(value) {
   return String(value)
@@ -30,6 +40,41 @@ function escapeHtml(value) {
 
 function getDay(dateKey) {
   return state.data.days.find((day) => day.date === dateKey);
+}
+
+function getFilterConfig(filterKey = state.calendarFilter) {
+  return calendarFilters.find((item) => item.key === filterKey) || calendarFilters[0];
+}
+
+function getFilterCount(day, filterKey = state.calendarFilter) {
+  return day.counts[filterKey] ?? day.counts.all;
+}
+
+function getVisibleSections(day, filterKey = state.calendarFilter) {
+  if (filterKey === "all") return day.sections;
+  return day.sections.filter((section) => section.key === filterKey);
+}
+
+function getFilterCitations(day, filterKey = state.calendarFilter) {
+  if (filterKey === "all") return day.citations;
+
+  const seen = new Set();
+  const citations = [];
+
+  getVisibleSections(day, filterKey).forEach((section) => {
+    section.items.forEach((item) => {
+      const citationKey = item.link || `${item.source}-${item.title}`;
+      if (seen.has(citationKey)) return;
+      seen.add(citationKey);
+      citations.push({
+        source: item.source,
+        title: item.title,
+        link: item.link,
+      });
+    });
+  });
+
+  return citations;
 }
 
 function getCalendarLevel(count) {
@@ -45,17 +90,44 @@ function renderHeaderMeta() {
   windowDays.textContent = `最近 ${state.data.window_days} 天`;
 }
 
+function renderCalendarFilters() {
+  calendarFilterBar.innerHTML = calendarFilters
+    .map((filter) => {
+      const active = filter.key === state.calendarFilter ? "is-active" : "";
+      const total = state.data.days.reduce((sum, day) => sum + getFilterCount(day, filter.key), 0);
+      return `
+        <button class="filter-chip ${active}" data-filter="${filter.key}">
+          <span>${escapeHtml(filter.label)}</span>
+          <strong>${total}</strong>
+        </button>
+      `;
+    })
+    .join("");
+
+  calendarNote.textContent = getFilterConfig().note;
+
+  calendarFilterBar.querySelectorAll("[data-filter]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.calendarFilter = button.dataset.filter;
+      renderCalendarFilters();
+      renderCalendar();
+      renderSelectedDay();
+    });
+  });
+}
+
 function renderCalendar() {
   const calendarDays = [...state.data.days].reverse();
   calendarGrid.innerHTML = calendarDays
     .map((day) => {
       const active = day.date === state.selectedDate ? "is-active" : "";
-      const level = getCalendarLevel(day.counts.all);
+      const count = getFilterCount(day);
+      const level = getCalendarLevel(count);
       return `
         <button class="calendar-day ${active} ${level}" data-date="${day.date}">
           <span class="calendar-weekday">${escapeHtml(day.weekday)}</span>
           <strong class="calendar-label">${escapeHtml(day.label)}</strong>
-          <span class="calendar-count">${day.counts.all} 条</span>
+          <span class="calendar-count">${count} 条</span>
         </button>
       `;
     })
@@ -162,10 +234,18 @@ function renderActions() {
 
 function renderSelectedDay() {
   const day = getDay(state.selectedDate) || state.data.days[0];
-  eventBoardTitle.textContent = `${day.label}当天新增事件`;
-  eventBoardNote.textContent = `${day.weekday} · 共 ${day.counts.all} 条新增信号`;
+  const filter = getFilterConfig();
+  const visibleSections = getVisibleSections(day);
+  const visibleCount = getFilterCount(day);
 
-  eventSections.innerHTML = day.sections
+  eventBoardTitle.textContent =
+    state.calendarFilter === "all" ? `${day.label}当天新增事件` : `${day.label}${filter.label}新增事件`;
+  eventBoardNote.textContent =
+    state.calendarFilter === "all"
+      ? `${day.weekday} · 共 ${day.counts.all} 条新增信号`
+      : `${day.weekday} · ${filter.label} ${visibleCount} 条信号`;
+
+  eventSections.innerHTML = visibleSections
     .map(
       (section) => `
         <section class="event-column">
@@ -217,8 +297,9 @@ function renderSelectedDay() {
     )
     .join("");
 
-  citationList.innerHTML = day.citations.length
-    ? day.citations
+  const citations = getFilterCitations(day);
+  citationList.innerHTML = citations.length
+    ? citations
         .map(
           (item) => `
             <a class="citation-item" href="${item.link}" target="_blank" rel="noreferrer">
@@ -235,6 +316,7 @@ function renderPage() {
   const today = getDay(state.data.default_date) || state.data.days[0];
   renderHeaderMeta();
   renderTodaySnapshot(today);
+  renderCalendarFilters();
   renderCalendar();
   renderRollingSummary();
   renderActions();
