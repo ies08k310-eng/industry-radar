@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-22T19:09:26+08:00",
-  "generated_label": "2026-04-22 19:09",
+  "generated_at": "2026-04-22T19:17:21+08:00",
+  "generated_label": "2026-04-22 19:17",
   "window_days": 15,
   "default_date": "2026-04-22",
   "days": [
@@ -197,7 +197,7 @@
         "opportunity": 2
       },
       "headline": "4月21日重点趋势：合规与持续尽调仍是优先投入方向",
-      "overview": "近 7 天共识别 29 条高相关信号。当前更值得优先推进的是把热点新闻转成具体产品动作，而不是只做资讯汇总。",
+      "overview": "近 7 天共识别 30 条高相关信号。当前更值得优先推进的是把热点新闻转成具体产品动作，而不是只做资讯汇总。",
       "quick_points": [
         "当日抓取到 2 条客户需求与政策信号。",
         "当日抓取到 2 条可转成产品模块的机会信号。"
@@ -205,7 +205,7 @@
       "trends": [
         {
           "theme": "合规与持续尽调",
-          "signal_count": 13,
+          "signal_count": 14,
           "summary": "反洗钱、客户尽调和受益所有人相关信号持续升温，客户更需要持续监控和证据留痕，而不是一次性查询结果。",
           "product_change": "围绕受益所有人、处罚诉讼、异常经营和舆情监控形成标准化尽调方案，并支持监控订阅。",
           "data_points": [
@@ -404,7 +404,7 @@
         "demand": 5,
         "opportunity": 3
       },
-      "headline": "4月20日重点趋势：事件驱动拓客仍是优先投入方向",
+      "headline": "4月20日重点趋势：合规与持续尽调仍是优先投入方向",
       "overview": "近 7 天共识别 26 条高相关信号。当前更值得优先推进的是把热点新闻转成具体产品动作，而不是只做资讯汇总。",
       "quick_points": [
         "当日抓取到 5 条客户需求与政策信号。",
@@ -412,21 +412,8 @@
       ],
       "trends": [
         {
-          "theme": "事件驱动拓客",
-          "signal_count": 12,
-          "summary": "中标、项目启动、资质变化和产业投资等事件，更适合作为高命中线索入口，名单式拓客的重要性在下降。",
-          "product_change": "围绕中标、扩产、资质变化、融资和迁移等事件做商机订阅，提高业务线索命中率。",
-          "data_points": [
-            "招投标动态",
-            "中标企业清单",
-            "资质变更",
-            "融资与扩产事件",
-            "区域迁移与招聘信号"
-          ]
-        },
-        {
           "theme": "合规与持续尽调",
-          "signal_count": 11,
+          "signal_count": 12,
           "summary": "反洗钱、客户尽调和受益所有人相关信号持续升温，客户更需要持续监控和证据留痕，而不是一次性查询结果。",
           "product_change": "围绕受益所有人、处罚诉讼、异常经营和舆情监控形成标准化尽调方案，并支持监控订阅。",
           "data_points": [
@@ -438,30 +425,33 @@
           ]
         },
         {
-          "theme": "AI 工作流化",
-          "signal_count": 7,
-          "summary": "近 7 天多条信号都在强调 AI 调用、工作台和结构化输出，行业竞争焦点正在从查询能力转向可直接嵌入业务流。",
-          "product_change": "把查询结果页升级为可引用、可追溯、可导出的 AI 工作台，并强化 API / Agent 接入。",
-          "data_points": [
-            "企业基础档案",
-            "风险摘要",
-            "控制权结构",
-            "来源引用链",
-            "结构化字段导出"
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "title": "事件驱动商机雷达",
-          "detail": "围绕中标、扩产、资质变化、融资和迁移等事件做商机订阅，提高业务线索命中率。",
+          "theme": "事件驱动拓客",
+          "signal_count": 11,
+          "summary": "中标、项目启动、资质变化和产业投资等事件，更适合作为高命中线索入口，名单式拓客的重要性在下降。",
+          "product_change": "围绕中标、扩产、资质变化、融资和迁移等事件做商机订阅，提高业务线索命中率。",
           "data_points": [
             "招投标动态",
             "中标企业清单",
             "资质变更",
-            "融资与扩产事件"
+            "融资与扩产事件",
+            "区域迁移与招聘信号"
           ]
         },
+        {
+          "theme": "供应链与采购风险",
+          "signal_count": 6,
+          "summary": "供应商准入、采购合规和风险预警正在成为更明确的企业需求，尤其适合沉淀成持续订阅类产品。",
+          "product_change": "新增采购和供应商风险视图，支持利益冲突、异常中标和上下游关系预警。",
+          "data_points": [
+            "供应商关系网络",
+            "招投标/中标记录",
+            "利益冲突提示",
+            "异常中标模式",
+            "上下游关联关系"
+          ]
+        }
+      ],
+      "actions": [
         {
           "title": "合规尽调监控台",
           "detail": "围绕受益所有人、处罚诉讼、异常经营和舆情监控形成标准化尽调方案，并支持监控订阅。",
@@ -473,13 +463,23 @@
           ]
         },
         {
-          "title": "AI 尽调工作台",
-          "detail": "把查询结果页升级为可引用、可追溯、可导出的 AI 工作台，并强化 API / Agent 接入。",
+          "title": "事件驱动商机雷达",
+          "detail": "围绕中标、扩产、资质变化、融资和迁移等事件做商机订阅，提高业务线索命中率。",
           "data_points": [
-            "企业基础档案",
-            "风险摘要",
-            "控制权结构",
-            "来源引用链"
+            "招投标动态",
+            "中标企业清单",
+            "资质变更",
+            "融资与扩产事件"
+          ]
+        },
+        {
+          "title": "供应商风险雷达",
+          "detail": "新增采购和供应商风险视图，支持利益冲突、异常中标和上下游关系预警。",
+          "data_points": [
+            "供应商关系网络",
+            "招投标/中标记录",
+            "利益冲突提示",
+            "异常中标模式"
           ]
         }
       ],
@@ -695,7 +695,7 @@
       "trends": [
         {
           "theme": "事件驱动拓客",
-          "signal_count": 15,
+          "signal_count": 14,
           "summary": "中标、项目启动、资质变化和产业投资等事件，更适合作为高命中线索入口，名单式拓客的重要性在下降。",
           "product_change": "围绕中标、扩产、资质变化、融资和迁移等事件做商机订阅，提高业务线索命中率。",
           "data_points": [
@@ -720,16 +720,16 @@
           ]
         },
         {
-          "theme": "AI 工作流化",
-          "signal_count": 7,
-          "summary": "近 7 天多条信号都在强调 AI 调用、工作台和结构化输出，行业竞争焦点正在从查询能力转向可直接嵌入业务流。",
-          "product_change": "把查询结果页升级为可引用、可追溯、可导出的 AI 工作台，并强化 API / Agent 接入。",
+          "theme": "合规与持续尽调",
+          "signal_count": 8,
+          "summary": "反洗钱、客户尽调和受益所有人相关信号持续升温，客户更需要持续监控和证据留痕，而不是一次性查询结果。",
+          "product_change": "围绕受益所有人、处罚诉讼、异常经营和舆情监控形成标准化尽调方案，并支持监控订阅。",
           "data_points": [
-            "企业基础档案",
-            "风险摘要",
-            "控制权结构",
-            "来源引用链",
-            "结构化字段导出"
+            "受益所有人链路",
+            "处罚诉讼时间线",
+            "异常经营记录",
+            "关联风险主体",
+            "监控命中留痕"
           ]
         }
       ],
@@ -755,13 +755,13 @@
           ]
         },
         {
-          "title": "AI 尽调工作台",
-          "detail": "把查询结果页升级为可引用、可追溯、可导出的 AI 工作台，并强化 API / Agent 接入。",
+          "title": "合规尽调监控台",
+          "detail": "围绕受益所有人、处罚诉讼、异常经营和舆情监控形成标准化尽调方案，并支持监控订阅。",
           "data_points": [
-            "企业基础档案",
-            "风险摘要",
-            "控制权结构",
-            "来源引用链"
+            "受益所有人链路",
+            "处罚诉讼时间线",
+            "异常经营记录",
+            "关联风险主体"
           ]
         }
       ],
@@ -807,7 +807,7 @@
       "trends": [
         {
           "theme": "事件驱动拓客",
-          "signal_count": 15,
+          "signal_count": 14,
           "summary": "中标、项目启动、资质变化和产业投资等事件，更适合作为高命中线索入口，名单式拓客的重要性在下降。",
           "product_change": "围绕中标、扩产、资质变化、融资和迁移等事件做商机订阅，提高业务线索命中率。",
           "data_points": [
@@ -832,16 +832,16 @@
           ]
         },
         {
-          "theme": "AI 工作流化",
-          "signal_count": 7,
-          "summary": "近 7 天多条信号都在强调 AI 调用、工作台和结构化输出，行业竞争焦点正在从查询能力转向可直接嵌入业务流。",
-          "product_change": "把查询结果页升级为可引用、可追溯、可导出的 AI 工作台，并强化 API / Agent 接入。",
+          "theme": "合规与持续尽调",
+          "signal_count": 8,
+          "summary": "反洗钱、客户尽调和受益所有人相关信号持续升温，客户更需要持续监控和证据留痕，而不是一次性查询结果。",
+          "product_change": "围绕受益所有人、处罚诉讼、异常经营和舆情监控形成标准化尽调方案，并支持监控订阅。",
           "data_points": [
-            "企业基础档案",
-            "风险摘要",
-            "控制权结构",
-            "来源引用链",
-            "结构化字段导出"
+            "受益所有人链路",
+            "处罚诉讼时间线",
+            "异常经营记录",
+            "关联风险主体",
+            "监控命中留痕"
           ]
         }
       ],
@@ -867,13 +867,13 @@
           ]
         },
         {
-          "title": "AI 尽调工作台",
-          "detail": "把查询结果页升级为可引用、可追溯、可导出的 AI 工作台，并强化 API / Agent 接入。",
+          "title": "合规尽调监控台",
+          "detail": "围绕受益所有人、处罚诉讼、异常经营和舆情监控形成标准化尽调方案，并支持监控订阅。",
           "data_points": [
-            "企业基础档案",
-            "风险摘要",
-            "控制权结构",
-            "来源引用链"
+            "受益所有人链路",
+            "处罚诉讼时间线",
+            "异常经营记录",
+            "关联风险主体"
           ]
         }
       ],
@@ -991,7 +991,7 @@
       "trends": [
         {
           "theme": "事件驱动拓客",
-          "signal_count": 12,
+          "signal_count": 11,
           "summary": "中标、项目启动、资质变化和产业投资等事件，更适合作为高命中线索入口，名单式拓客的重要性在下降。",
           "product_change": "围绕中标、扩产、资质变化、融资和迁移等事件做商机订阅，提高业务线索命中率。",
           "data_points": [
@@ -1017,7 +1017,7 @@
         },
         {
           "theme": "合规与持续尽调",
-          "signal_count": 7,
+          "signal_count": 8,
           "summary": "反洗钱、客户尽调和受益所有人相关信号持续升温，客户更需要持续监控和证据留痕，而不是一次性查询结果。",
           "product_change": "围绕受益所有人、处罚诉讼、异常经营和舆情监控形成标准化尽调方案，并支持监控订阅。",
           "data_points": [
@@ -1199,7 +1199,7 @@
       "trends": [
         {
           "theme": "事件驱动拓客",
-          "signal_count": 12,
+          "signal_count": 11,
           "summary": "中标、项目启动、资质变化和产业投资等事件，更适合作为高命中线索入口，名单式拓客的重要性在下降。",
           "product_change": "围绕中标、扩产、资质变化、融资和迁移等事件做商机订阅，提高业务线索命中率。",
           "data_points": [
@@ -1212,7 +1212,7 @@
         },
         {
           "theme": "合规与持续尽调",
-          "signal_count": 9,
+          "signal_count": 10,
           "summary": "反洗钱、客户尽调和受益所有人相关信号持续升温，客户更需要持续监控和证据留痕，而不是一次性查询结果。",
           "product_change": "围绕受益所有人、处罚诉讼、异常经营和舆情监控形成标准化尽调方案，并支持监控订阅。",
           "data_points": [
@@ -1224,16 +1224,16 @@
           ]
         },
         {
-          "theme": "AI 工作流化",
+          "theme": "供应链与采购风险",
           "signal_count": 8,
-          "summary": "近 7 天多条信号都在强调 AI 调用、工作台和结构化输出，行业竞争焦点正在从查询能力转向可直接嵌入业务流。",
-          "product_change": "把查询结果页升级为可引用、可追溯、可导出的 AI 工作台，并强化 API / Agent 接入。",
+          "summary": "供应商准入、采购合规和风险预警正在成为更明确的企业需求，尤其适合沉淀成持续订阅类产品。",
+          "product_change": "新增采购和供应商风险视图，支持利益冲突、异常中标和上下游关系预警。",
           "data_points": [
-            "企业基础档案",
-            "风险摘要",
-            "控制权结构",
-            "来源引用链",
-            "结构化字段导出"
+            "供应商关系网络",
+            "招投标/中标记录",
+            "利益冲突提示",
+            "异常中标模式",
+            "上下游关联关系"
           ]
         }
       ],
@@ -1259,13 +1259,13 @@
           ]
         },
         {
-          "title": "AI 尽调工作台",
-          "detail": "把查询结果页升级为可引用、可追溯、可导出的 AI 工作台，并强化 API / Agent 接入。",
+          "title": "供应商风险雷达",
+          "detail": "新增采购和供应商风险视图，支持利益冲突、异常中标和上下游关系预警。",
           "data_points": [
-            "企业基础档案",
-            "风险摘要",
-            "控制权结构",
-            "来源引用链"
+            "供应商关系网络",
+            "招投标/中标记录",
+            "利益冲突提示",
+            "异常中标模式"
           ]
         }
       ],
@@ -1462,21 +1462,21 @@
       "date": "2026-04-15",
       "label": "4月15日",
       "counts": {
-        "all": 3,
+        "all": 4,
         "competitor": 0,
-        "demand": 1,
+        "demand": 2,
         "opportunity": 2
       },
       "headline": "4月15日重点趋势：事件驱动拓客仍是优先投入方向",
       "overview": "近 7 天共识别 20 条高相关信号。当前更值得优先推进的是把热点新闻转成具体产品动作，而不是只做资讯汇总。",
       "quick_points": [
-        "当日抓取到 1 条客户需求与政策信号。",
+        "当日抓取到 2 条客户需求与政策信号。",
         "当日抓取到 2 条可转成产品模块的机会信号。"
       ],
       "trends": [
         {
           "theme": "事件驱动拓客",
-          "signal_count": 14,
+          "signal_count": 13,
           "summary": "中标、项目启动、资质变化和产业投资等事件，更适合作为高命中线索入口，名单式拓客的重要性在下降。",
           "product_change": "围绕中标、扩产、资质变化、融资和迁移等事件做商机订阅，提高业务线索命中率。",
           "data_points": [
@@ -1502,7 +1502,7 @@
         },
         {
           "theme": "合规与持续尽调",
-          "signal_count": 6,
+          "signal_count": 7,
           "summary": "反洗钱、客户尽调和受益所有人相关信号持续升温，客户更需要持续监控和证据留痕，而不是一次性查询结果。",
           "product_change": "围绕受益所有人、处罚诉讼、异常经营和舆情监控形成标准化尽调方案，并支持监控订阅。",
           "data_points": [
@@ -1576,6 +1576,23 @@
                 "异常经营记录",
                 "关联风险主体"
               ]
+            },
+            {
+              "title": "近一个月内数家险企领反洗钱罚单！从都邦财险违规细则透视行业合规盲区",
+              "source": "新浪财经",
+              "source_url": "https://finance.sina.com.cn",
+              "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5ta2ZQbjRtR1VnamdtWExucmRQQWhaWnlPQjUybHFVd3NfUGI0WFFHVGVZLUFkdVdOak9uOGxyZUtVaGR2WlFEZXRaLVN1UUstZ2UxejdEOVhYQW43SlgwNUtRZFlYOGVCUV83dmxqLThVWnlFcGc?oc=5",
+              "published_at": "2026-04-15T10:52:00+08:00",
+              "published_label": "04-15 10:52",
+              "summary": "公开信号显示，近一个月内数家险企领反洗钱罚单！从都邦财险违规细则透视行业合规盲区。",
+              "product_takeaway": "建议把合规场景做成标准包，突出持续监控和审计留痕。",
+              "module": "合规尽调监控台",
+              "data_points": [
+                "受益所有人链路",
+                "处罚诉讼时间线",
+                "异常经营记录",
+                "关联风险主体"
+              ]
             }
           ]
         },
@@ -1630,6 +1647,12 @@
           "source_url": "https://wap.eastmoney.com"
         },
         {
+          "title": "近一个月内数家险企领反洗钱罚单！从都邦财险违规细则透视行业合规盲区",
+          "source": "新浪财经",
+          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5ta2ZQbjRtR1VnamdtWExucmRQQWhaWnlPQjUybHFVd3NfUGI0WFFHVGVZLUFkdVdOak9uOGxyZUtVaGR2WlFEZXRaLVN1UUstZ2UxejdEOVhYQW43SlgwNUtRZFlYOGVCUV83dmxqLThVWnlFcGc?oc=5",
+          "source_url": "https://finance.sina.com.cn"
+        },
+        {
           "title": "备战广交会，佛山外贸企业拓市场、防风险有新帮手！ 中国信保数智化资信神器「全球查」重磅上线",
           "source": "content.foshanplus.com",
           "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE90cHAtRDJEd09OaW9wSDJTVUxBNEdONjJ6TFJvNE8yNTZFU21LUm55UEs1bTRZRzRySG5xMDJGdVFlT2EybDN5bkl2SkRldTl2NVRLN3FvUTVJelVJVDhZMG95X3N4c0RpSnlQV3UySWE3MXZodGlHT2tB?oc=5",
@@ -1647,20 +1670,20 @@
       "date": "2026-04-14",
       "label": "4月14日",
       "counts": {
-        "all": 1,
+        "all": 0,
         "competitor": 0,
         "demand": 0,
-        "opportunity": 1
+        "opportunity": 0
       },
       "headline": "4月14日重点趋势：事件驱动拓客仍是优先投入方向",
-      "overview": "近 7 天共识别 17 条高相关信号。当前更值得优先推进的是把热点新闻转成具体产品动作，而不是只做资讯汇总。",
+      "overview": "近 7 天共识别 16 条高相关信号。当前更值得优先推进的是把热点新闻转成具体产品动作，而不是只做资讯汇总。",
       "quick_points": [
-        "当日抓取到 1 条可转成产品模块的机会信号。"
+        "当日未发现高相关新增新闻，建议重点参考近 7 天滚动趋势。"
       ],
       "trends": [
         {
           "theme": "事件驱动拓客",
-          "signal_count": 12,
+          "signal_count": 11,
           "summary": "中标、项目启动、资质变化和产业投资等事件，更适合作为高命中线索入口，名单式拓客的重要性在下降。",
           "product_change": "围绕中标、扩产、资质变化、融资和迁移等事件做商机订阅，提高业务线索命中率。",
           "data_points": [
@@ -1750,35 +1773,10 @@
           "title": "产品机会与新增模块",
           "description": "聚焦可沉淀为新模块或新数据视图的机会点，帮助产品更快落地。",
           "empty": "当日未抓取到高相关的产品机会信号。",
-          "items": [
-            {
-              "title": "创业慧康新注册《创业医疗健康主数据管理系统软件V6》等3个项目的软件著作权_公司新闻",
-              "source": "证券之星",
-              "source_url": "https://stock.stockstar.com",
-              "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE05QlN6eGlWSS1yamt6bkVzNWExWUNxUU1BQUtzREV2dE5RSjVBR0pYS1ViVnhRQWhzSzg4N1F4Y2VQbVVsdlVVU21BdEFPTENJZHphRlhUNC1wNWc0VEhZWk9R?oc=5",
-              "published_at": "2026-04-14T01:38:11+08:00",
-              "published_label": "04-14 01:38",
-              "summary": "公开信号显示，创业慧康新注册《创业医疗健康主数据管理系统软件V6》等3个项目的软件著作权_公司新闻。",
-              "product_takeaway": "建议把商机发现从静态名单升级成事件流和订阅提醒。",
-              "module": "事件驱动商机雷达",
-              "data_points": [
-                "招投标动态",
-                "中标企业清单",
-                "资质变更",
-                "融资与扩产事件"
-              ]
-            }
-          ]
+          "items": []
         }
       ],
-      "citations": [
-        {
-          "title": "创业慧康新注册《创业医疗健康主数据管理系统软件V6》等3个项目的软件著作权_公司新闻",
-          "source": "证券之星",
-          "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE05QlN6eGlWSS1yamt6bkVzNWExWUNxUU1BQUtzREV2dE5RSjVBR0pYS1ViVnhRQWhzSzg4N1F4Y2VQbVVsdlVVU21BdEFPTENJZHphRlhUNC1wNWc0VEhZWk9R?oc=5",
-          "source_url": "https://stock.stockstar.com"
-        }
-      ]
+      "citations": []
     },
     {
       "date": "2026-04-13",
