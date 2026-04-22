@@ -6,7 +6,7 @@
     <title>企业数据服务行业情报日报</title>
     <meta
       name="description"
-      content="每日自动抓取企业数据服务赛道相关新闻，保留近15天历史，并将趋势解读落实到具体产品调整与新增模块建议。"
+      content="每日自动抓取企业数据服务赛道相关新闻，保留近15天历史，并把趋势解读落实到企查查 APP / Web 的具体产品调整。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,7 +23,7 @@
           <p class="kicker">Daily Industry Brief</p>
           <h1>企业数据服务行业情报日报</h1>
           <p class="subhead">
-            面向企查查相关业务场景，每日自动抓取竞品、客户需求与产品机会信号；默认展示当天更新，并可回看最近 15 天内的新闻与解读。
+            每日自动抓取行业相关新闻，默认展示当天新增事件；最近 15 天趋势总结单独沉淀为长期判断，并直接映射到企查查 APP / Web 的产品调整建议。
           </p>
         </div>
         <div class="header-meta">
@@ -43,53 +43,69 @@
       </header>
 
       <main>
-        <section class="hero panel panel-strong">
-          <div class="hero-main">
-            <p class="kicker">当日判断</p>
-            <h2 id="headline">正在加载日报内容...</h2>
-            <p class="hero-text" id="overview"></p>
-            <div class="summary-stats" id="summaryStats"></div>
-          </div>
-          <aside class="hero-aside">
-            <p class="aside-title">当日新增信号</p>
-            <ul class="quick-list" id="quickList"></ul>
-          </aside>
+        <section class="dashboard-grid">
+          <section class="panel section-panel snapshot-panel">
+            <div class="section-head compact-head">
+              <div>
+                <p class="kicker">Today</p>
+                <h2 id="dayHeadline">正在加载当天新增...</h2>
+              </div>
+            </div>
+            <div class="stats-strip" id="dayCounts"></div>
+            <ul class="point-list" id="dayQuickPoints"></ul>
+          </section>
+
+          <section class="panel section-panel calendar-panel">
+            <div class="section-head compact-head">
+              <div>
+                <p class="kicker">Calendar</p>
+                <h3>查看最近 15 日</h3>
+              </div>
+              <p class="section-note">显示每天事件数，点击后跳到当天事件模块。</p>
+            </div>
+            <div class="calendar-grid" id="calendarGrid"></div>
+          </section>
         </section>
 
-        <section class="panel section-panel">
+        <section class="panel section-panel rolling-panel">
           <div class="section-head">
             <div>
-              <p class="kicker">Date Window</p>
-              <h3>查看最近 15 天</h3>
+              <p class="kicker">Rolling Summary</p>
+              <h3>最近 15 天趋势总结</h3>
             </div>
-            <p class="section-note">点击日期切换当天新增新闻和近 7 天滚动趋势解读。</p>
+            <p class="section-note">这部分固定总结近 15 天变化，不会随着当天事件切换重复刷新。</p>
           </div>
-          <div class="date-tabs" id="dateTabs"></div>
-        </section>
-
-        <section class="panel section-panel">
-          <div class="section-head">
+          <div class="rolling-top">
             <div>
-              <p class="kicker">Trend Decode</p>
-              <h3>最近趋势总结解读</h3>
+              <h2 class="rolling-headline" id="rollingHeadline">正在加载趋势总结...</h2>
+              <p class="rolling-overview" id="rollingOverview"></p>
             </div>
-            <p class="section-note">不是停留在新闻本身，而是直接落实到产品该怎么改、该新增什么模块。</p>
+            <ul class="point-list compact-points" id="rollingKeyPoints"></ul>
           </div>
           <div class="trend-grid" id="trendGrid"></div>
         </section>
 
-        <section class="panel section-panel">
+        <section class="panel section-panel action-panel">
           <div class="section-head">
             <div>
-              <p class="kicker">Product Actions</p>
-              <h3>建议优先调整的产品模块</h3>
+              <p class="kicker">QCC Product Actions</p>
+              <h3>围绕企查查 APP / Web 的对比调整建议</h3>
             </div>
-            <p class="section-note">优先展示应该新增的功能形态，以及页面里需要呈现的数据内容。</p>
+            <p class="section-note">优先展示应该新增的模块、各端应承接的角色，以及需要展示的数据内容。</p>
           </div>
           <div class="action-grid" id="actionGrid"></div>
         </section>
 
-        <section class="news-sections" id="newsSections"></section>
+        <section class="panel section-panel event-board" id="eventBoard">
+          <div class="section-head">
+            <div>
+              <p class="kicker">Daily Events</p>
+              <h3 id="eventBoardTitle">当天新增事件</h3>
+            </div>
+            <p class="section-note" id="eventBoardNote"></p>
+          </div>
+          <div class="event-sections" id="eventSections"></div>
+        </section>
 
         <footer class="citation-footer">
           <div class="citation-head">

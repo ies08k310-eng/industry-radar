@@ -5,14 +5,18 @@ const state = {
 
 const generatedAt = document.getElementById("generatedAt");
 const windowDays = document.getElementById("windowDays");
-const headline = document.getElementById("headline");
-const overview = document.getElementById("overview");
-const summaryStats = document.getElementById("summaryStats");
-const quickList = document.getElementById("quickList");
-const dateTabs = document.getElementById("dateTabs");
+const dayHeadline = document.getElementById("dayHeadline");
+const dayCounts = document.getElementById("dayCounts");
+const dayQuickPoints = document.getElementById("dayQuickPoints");
+const calendarGrid = document.getElementById("calendarGrid");
+const rollingHeadline = document.getElementById("rollingHeadline");
+const rollingOverview = document.getElementById("rollingOverview");
+const rollingKeyPoints = document.getElementById("rollingKeyPoints");
 const trendGrid = document.getElementById("trendGrid");
 const actionGrid = document.getElementById("actionGrid");
-const newsSections = document.getElementById("newsSections");
+const eventBoardTitle = document.getElementById("eventBoardTitle");
+const eventBoardNote = document.getElementById("eventBoardNote");
+const eventSections = document.getElementById("eventSections");
 const citationList = document.getElementById("citationList");
 
 function escapeHtml(value) {
@@ -33,64 +37,82 @@ function renderHeaderMeta() {
   windowDays.textContent = `最近 ${state.data.window_days} 天`;
 }
 
-function renderDateTabs() {
-  dateTabs.innerHTML = state.data.days
+function renderCalendar() {
+  const calendarDays = [...state.data.days].reverse();
+  calendarGrid.innerHTML = calendarDays
     .map((day) => {
       const active = day.date === state.selectedDate ? "is-active" : "";
+      const hasEvents = day.counts.all > 0 ? "has-events" : "no-events";
       return `
-        <button class="date-tab ${active}" data-date="${day.date}">
-          <span>${day.label}</span>
-          <strong>${day.counts.all}</strong>
+        <button class="calendar-day ${active} ${hasEvents}" data-date="${day.date}">
+          <span class="calendar-weekday">${escapeHtml(day.weekday)}</span>
+          <strong class="calendar-label">${escapeHtml(day.label)}</strong>
+          <span class="calendar-count">${day.counts.all} 条</span>
         </button>
       `;
     })
     .join("");
 
-  dateTabs.querySelectorAll("[data-date]").forEach((button) => {
+  calendarGrid.querySelectorAll("[data-date]").forEach((button) => {
     button.addEventListener("click", () => {
       state.selectedDate = button.dataset.date;
-      renderPage();
+      renderCalendar();
+      renderSelectedDay();
+      document.getElementById("eventBoard").scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
 }
 
-function renderHero(day) {
-  headline.textContent = day.headline;
-  overview.textContent = day.overview;
-  quickList.innerHTML = day.quick_points.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
-  summaryStats.innerHTML = [
+function renderTodaySnapshot(day) {
+  dayHeadline.textContent = day.headline;
+  dayCounts.innerHTML = [
     { label: "当天新增", value: `${day.counts.all} 条` },
     { label: "竞品动作", value: `${day.counts.competitor} 条` },
     { label: "需求信号", value: `${day.counts.demand} 条` },
-    { label: "机会信号", value: `${day.counts.opportunity} 条` },
+    { label: "机会事件", value: `${day.counts.opportunity} 条` },
   ]
     .map(
       (item) => `
-        <article class="summary-card">
+        <article class="stat-chip">
           <span>${item.label}</span>
           <strong>${item.value}</strong>
         </article>
       `,
     )
     .join("");
+  dayQuickPoints.innerHTML = day.quick_points.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
 }
 
-function renderTrends(day) {
-  trendGrid.innerHTML = day.trends
+function renderRollingSummary() {
+  const summary = state.data.rolling_summary;
+  rollingHeadline.textContent = summary.headline;
+  rollingOverview.textContent = summary.overview;
+  rollingKeyPoints.innerHTML = summary.key_points.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+
+  trendGrid.innerHTML = summary.trends
     .map(
       (trend) => `
         <article class="trend-card">
           <div class="card-top">
-            <p class="mini-kicker">近7天信号 ${trend.signal_count} 条</p>
+            <p class="mini-kicker">近15天信号 ${trend.signal_count} 条</p>
             <h4>${escapeHtml(trend.theme)}</h4>
           </div>
-          <p>${escapeHtml(trend.summary)}</p>
-          <div class="insight-block">
-            <span>建议动作</span>
-            <p>${escapeHtml(trend.product_change)}</p>
-          </div>
-          <div class="chip-row">
-            ${trend.data_points.map((point) => `<span class="data-chip">${escapeHtml(point)}</span>`).join("")}
+          <p class="card-copy">${escapeHtml(trend.summary)}</p>
+          <div class="compare-stack compact-compare">
+            <div class="compare-block app-block">
+              <span>企查查 APP</span>
+              <p>${escapeHtml(trend.app_change)}</p>
+              <div class="chip-row">
+                ${trend.app_data_points.map((point) => `<span class="data-chip">${escapeHtml(point)}</span>`).join("")}
+              </div>
+            </div>
+            <div class="compare-block web-block">
+              <span>企查查 Web</span>
+              <p>${escapeHtml(trend.web_change)}</p>
+              <div class="chip-row">
+                ${trend.web_data_points.map((point) => `<span class="data-chip">${escapeHtml(point)}</span>`).join("")}
+              </div>
+            </div>
           </div>
         </article>
       `,
@@ -98,21 +120,31 @@ function renderTrends(day) {
     .join("");
 }
 
-function renderActions(day) {
-  actionGrid.innerHTML = day.actions
+function renderActions() {
+  const actions = state.data.rolling_summary.actions;
+  actionGrid.innerHTML = actions
     .map(
       (action) => `
         <article class="action-card">
           <div class="card-top">
-            <p class="mini-kicker">建议新增模块</p>
+            <p class="mini-kicker">重点方向</p>
             <h4>${escapeHtml(action.title)}</h4>
           </div>
-          <p>${escapeHtml(action.detail)}</p>
-          <div class="data-list">
-            <span>建议展示的数据内容</span>
-            <ul>
-              ${action.data_points.map((point) => `<li>${escapeHtml(point)}</li>`).join("")}
-            </ul>
+          <div class="compare-stack">
+            <div class="compare-block app-block">
+              <span>企查查 APP：${escapeHtml(action.app.module)}</span>
+              <p>${escapeHtml(action.app.change)}</p>
+              <ul>
+                ${action.app.data_points.map((point) => `<li>${escapeHtml(point)}</li>`).join("")}
+              </ul>
+            </div>
+            <div class="compare-block web-block">
+              <span>企查查 Web：${escapeHtml(action.web.module)}</span>
+              <p>${escapeHtml(action.web.change)}</p>
+              <ul>
+                ${action.web.data_points.map((point) => `<li>${escapeHtml(point)}</li>`).join("")}
+              </ul>
+            </div>
           </div>
         </article>
       `,
@@ -120,51 +152,55 @@ function renderActions(day) {
     .join("");
 }
 
-function renderNews(day) {
-  newsSections.innerHTML = day.sections
+function renderSelectedDay() {
+  const day = getDay(state.selectedDate) || state.data.days[0];
+  eventBoardTitle.textContent = `${day.label}当天新增事件`;
+  eventBoardNote.textContent = `${day.weekday} · 共 ${day.counts.all} 条新增信号`;
+
+  eventSections.innerHTML = day.sections
     .map(
       (section) => `
-        <section class="panel section-panel news-panel">
-          <div class="section-head">
-            <div>
-              <p class="kicker">Daily Signals</p>
-              <h3>${escapeHtml(section.title)}</h3>
-            </div>
-            <p class="section-note">${escapeHtml(section.description)}</p>
+        <section class="event-column">
+          <div class="event-column-head">
+            <h4>${escapeHtml(section.title)}</h4>
+            <span>${section.items.length} 条</span>
           </div>
-          <div class="news-grid">
+          <p class="event-column-note">${escapeHtml(section.description)}</p>
+          <div class="event-list">
             ${
               section.items.length
                 ? section.items
                     .map(
                       (item) => `
-                        <article class="news-card">
-                          <div class="news-meta">
+                        <article class="event-card">
+                          <div class="event-meta">
                             <span>${escapeHtml(item.source)}</span>
                             <span>${escapeHtml(item.published_label)}</span>
                           </div>
-                          <h4>${escapeHtml(item.title)}</h4>
-                          <p>${escapeHtml(item.product_takeaway)}</p>
-                          <div class="module-line">
-                            <strong>建议模块：</strong>${escapeHtml(item.module)}
-                          </div>
-                          <div class="chip-row">
-                            ${item.data_points.map((point) => `<span class="data-chip">${escapeHtml(point)}</span>`).join("")}
+                          <h5>${escapeHtml(item.title)}</h5>
+                          <p class="event-takeaway">${escapeHtml(item.product_takeaway)}</p>
+                          <div class="event-compare">
+                            <div>
+                              <strong>APP：</strong>${escapeHtml(item.app_module)}
+                              <p>${escapeHtml(item.app_change)}</p>
+                            </div>
+                            <div>
+                              <strong>Web：</strong>${escapeHtml(item.web_module)}
+                              <p>${escapeHtml(item.web_change)}</p>
+                            </div>
                           </div>
                         </article>
                       `,
                     )
                     .join("")
-                : `<div class="empty-card">${escapeHtml(section.empty)}</div>`
+                : `<div class="event-empty">${escapeHtml(section.empty)}</div>`
             }
           </div>
         </section>
       `,
     )
     .join("");
-}
 
-function renderCitations(day) {
   citationList.innerHTML = day.citations.length
     ? day.citations
         .map(
@@ -180,14 +216,13 @@ function renderCitations(day) {
 }
 
 function renderPage() {
-  const day = getDay(state.selectedDate) || state.data.days[0];
+  const today = getDay(state.data.default_date) || state.data.days[0];
   renderHeaderMeta();
-  renderDateTabs();
-  renderHero(day);
-  renderTrends(day);
-  renderActions(day);
-  renderNews(day);
-  renderCitations(day);
+  renderTodaySnapshot(today);
+  renderCalendar();
+  renderRollingSummary();
+  renderActions();
+  renderSelectedDay();
 }
 
 async function load() {
@@ -198,9 +233,8 @@ async function load() {
     state.selectedDate = state.data.default_date;
     renderPage();
   } catch (error) {
-    headline.textContent = "日报数据加载失败";
-    overview.textContent = "未能读取自动更新的数据文件。请稍后刷新，或检查 data/daily-brief.json 是否存在。";
-    quickList.innerHTML = `<li>${escapeHtml(error.message)}</li>`;
+    dayHeadline.textContent = "日报数据加载失败";
+    dayQuickPoints.innerHTML = `<li>${escapeHtml(error.message)}</li>`;
   }
 }
 
