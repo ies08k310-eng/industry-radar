@@ -32,6 +32,14 @@ function getDay(dateKey) {
   return state.data.days.find((day) => day.date === dateKey);
 }
 
+function getCalendarLevel(count) {
+  if (count === 0) return "calendar-level-0";
+  if (count <= 2) return "calendar-level-1";
+  if (count <= 4) return "calendar-level-2";
+  if (count <= 6) return "calendar-level-3";
+  return "calendar-level-4";
+}
+
 function renderHeaderMeta() {
   generatedAt.textContent = state.data.generated_label;
   windowDays.textContent = `最近 ${state.data.window_days} 天`;
@@ -42,9 +50,9 @@ function renderCalendar() {
   calendarGrid.innerHTML = calendarDays
     .map((day) => {
       const active = day.date === state.selectedDate ? "is-active" : "";
-      const hasEvents = day.counts.all > 0 ? "has-events" : "no-events";
+      const level = getCalendarLevel(day.counts.all);
       return `
-        <button class="calendar-day ${active} ${hasEvents}" data-date="${day.date}">
+        <button class="calendar-day ${active} ${level}" data-date="${day.date}">
           <span class="calendar-weekday">${escapeHtml(day.weekday)}</span>
           <strong class="calendar-label">${escapeHtml(day.label)}</strong>
           <span class="calendar-count">${day.counts.all} 条</span>
@@ -178,15 +186,23 @@ function renderSelectedDay() {
                             <span>${escapeHtml(item.published_label)}</span>
                           </div>
                           <h5>${escapeHtml(item.title)}</h5>
-                          <p class="event-takeaway">${escapeHtml(item.product_takeaway)}</p>
-                          <div class="event-compare">
-                            <div>
-                              <strong>APP：</strong>${escapeHtml(item.app_module)}
+                          <div class="event-takeaway">${escapeHtml(item.product_takeaway)}</div>
+                          <div class="event-compare compact-brief">
+                            <div class="event-brief app-brief">
+                              <span>APP</span>
+                              <strong>${escapeHtml(item.app_module)}</strong>
                               <p>${escapeHtml(item.app_change)}</p>
+                              <div class="brief-chip-row">
+                                ${item.app_data_points.map((point) => `<span class="brief-chip">${escapeHtml(point)}</span>`).join("")}
+                              </div>
                             </div>
-                            <div>
-                              <strong>Web：</strong>${escapeHtml(item.web_module)}
+                            <div class="event-brief web-brief">
+                              <span>Web</span>
+                              <strong>${escapeHtml(item.web_module)}</strong>
                               <p>${escapeHtml(item.web_change)}</p>
+                              <div class="brief-chip-row">
+                                ${item.web_data_points.map((point) => `<span class="brief-chip">${escapeHtml(point)}</span>`).join("")}
+                              </div>
                             </div>
                           </div>
                         </article>

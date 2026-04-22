@@ -254,6 +254,31 @@ h1 {
   transform: translateY(-1px);
 }
 
+.calendar-day.calendar-level-0 {
+  background: #f3f5f8;
+  opacity: 0.78;
+}
+
+.calendar-day.calendar-level-1 {
+  background: #edf4fb;
+  border-color: #d4e1ef;
+}
+
+.calendar-day.calendar-level-2 {
+  background: #deebf8;
+  border-color: #bdd1e4;
+}
+
+.calendar-day.calendar-level-3 {
+  background: #c9ddf2;
+  border-color: #98b7d5;
+}
+
+.calendar-day.calendar-level-4 {
+  background: #b4cde9;
+  border-color: #6f95bb;
+}
+
 .calendar-day.is-active {
   border-color: var(--accent);
   background: var(--accent);
@@ -264,11 +289,6 @@ h1 {
 .calendar-day.is-active .calendar-count {
   color: rgba(255, 255, 255, 0.82);
 }
-
-.calendar-day.no-events {
-  opacity: 0.68;
-}
-
 .calendar-label {
   display: block;
   margin: 6px 0 4px;
@@ -397,7 +417,7 @@ h1 {
 
 .event-card,
 .event-empty {
-  padding: 12px;
+  padding: 11px 12px;
 }
 
 .event-meta {
@@ -406,16 +426,88 @@ h1 {
 
 .event-card h5 {
   font-size: 14px;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .event-takeaway {
-  margin-top: 8px;
+  margin-top: 7px;
+  padding-left: 10px;
+  border-left: 2px solid var(--line-strong);
+  font-size: 12px;
+  line-height: 1.6;
 }
 
 .event-compare {
   display: grid;
   gap: 8px;
-  margin-top: 10px;
+  margin-top: 9px;
+}
+
+.event-brief {
+  padding: 9px 10px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.event-brief span,
+.event-brief strong {
+  display: block;
+}
+
+.event-brief span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.event-brief strong {
+  margin-top: 3px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.event-brief p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.app-brief span,
+.app-brief strong {
+  color: var(--app);
+}
+
+.web-brief span,
+.web-brief strong {
+  color: var(--web);
+}
+
+.brief-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 7px;
+}
+
+.brief-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: var(--paper-soft);
+  color: var(--muted);
+  font-size: 11px;
+  border: 1px solid var(--line);
 }
 
 .citation-list {
