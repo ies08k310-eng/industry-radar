@@ -77,6 +77,37 @@ function getFilterCitations(day, filterKey = state.calendarFilter) {
   return citations;
 }
 
+function arraysEqual(left = [], right = []) {
+  if (left.length !== right.length) return false;
+  return left.every((item, index) => item === right[index]);
+}
+
+function getSharedSectionPlan(section) {
+  if (!section.items.length) return null;
+
+  const [first, ...rest] = section.items;
+  const hasSharedPlan = rest.every(
+    (item) =>
+      item.app_module === first.app_module &&
+      item.app_change === first.app_change &&
+      item.web_module === first.web_module &&
+      item.web_change === first.web_change &&
+      arraysEqual(item.app_data_points, first.app_data_points) &&
+      arraysEqual(item.web_data_points, first.web_data_points),
+  );
+
+  if (!hasSharedPlan) return null;
+
+  return {
+    app_module: first.app_module,
+    app_change: first.app_change,
+    app_data_points: first.app_data_points,
+    web_module: first.web_module,
+    web_change: first.web_change,
+    web_data_points: first.web_data_points,
+  };
+}
+
 function getCalendarLevel(count) {
   if (count === 0) return "calendar-level-0";
   if (count <= 2) return "calendar-level-1";
@@ -237,6 +268,7 @@ function renderSelectedDay() {
   const filter = getFilterConfig();
   const visibleSections = getVisibleSections(day);
   const visibleCount = getFilterCount(day);
+  const layoutClass = visibleSections.length === 1 ? "is-single" : visibleSections.length === 2 ? "is-dual" : "";
 
   eventBoardTitle.textContent =
     state.calendarFilter === "all" ? `${day.label}当天新增事件` : `${day.label}${filter.label}新增事件`;
@@ -244,47 +276,98 @@ function renderSelectedDay() {
     state.calendarFilter === "all"
       ? `${day.weekday} · 共 ${day.counts.all} 条新增信号`
       : `${day.weekday} · ${filter.label} ${visibleCount} 条信号`;
+  eventSections.className = `event-sections ${layoutClass}`.trim();
 
   eventSections.innerHTML = visibleSections
-    .map(
-      (section) => `
-        <section class="event-column">
+    .map((section) => {
+      const sharedPlan = getSharedSectionPlan(section);
+      const sectionClass = [
+        "event-column",
+        visibleSections.length === 1 ? "is-focused" : "",
+        sharedPlan ? "has-shared-plan" : "",
+      ]
+        .filter(Boolean)
+        .join(" ");
+
+      return `
+        <section class="${sectionClass}">
           <div class="event-column-head">
             <h4>${escapeHtml(section.title)}</h4>
             <span>${section.items.length} 条</span>
           </div>
           <p class="event-column-note">${escapeHtml(section.description)}</p>
+          ${
+            sharedPlan
+              ? `
+                <div class="section-plan">
+                  <div class="section-plan-head">
+                    <span>本类统一产品动作</span>
+                    <strong>去掉重复建议，先看共性调整方向</strong>
+                  </div>
+                  <div class="section-plan-grid">
+                    <div class="section-plan-block app-block">
+                      <span>企查查 APP：${escapeHtml(sharedPlan.app_module)}</span>
+                      <p>${escapeHtml(sharedPlan.app_change)}</p>
+                      <div class="chip-row">
+                        ${sharedPlan.app_data_points.map((point) => `<span class="data-chip">${escapeHtml(point)}</span>`).join("")}
+                      </div>
+                    </div>
+                    <div class="section-plan-block web-block">
+                      <span>企查查 Web：${escapeHtml(sharedPlan.web_module)}</span>
+                      <p>${escapeHtml(sharedPlan.web_change)}</p>
+                      <div class="chip-row">
+                        ${sharedPlan.web_data_points.map((point) => `<span class="data-chip">${escapeHtml(point)}</span>`).join("")}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              `
+              : ""
+          }
           <div class="event-list">
             ${
               section.items.length
                 ? section.items
                     .map(
                       (item) => `
-                        <article class="event-card">
+                        <article class="event-card ${sharedPlan ? "is-condensed" : ""}">
                           <div class="event-meta">
                             <span>${escapeHtml(item.source)}</span>
                             <span>${escapeHtml(item.published_label)}</span>
                           </div>
                           <h5>${escapeHtml(item.title)}</h5>
                           <div class="event-takeaway">${escapeHtml(item.product_takeaway)}</div>
-                          <div class="event-compare compact-brief">
-                            <div class="event-brief app-brief">
-                              <span>APP</span>
-                              <strong>${escapeHtml(item.app_module)}</strong>
-                              <p>${escapeHtml(item.app_change)}</p>
-                              <div class="brief-chip-row">
-                                ${item.app_data_points.map((point) => `<span class="brief-chip">${escapeHtml(point)}</span>`).join("")}
-                              </div>
-                            </div>
-                            <div class="event-brief web-brief">
-                              <span>Web</span>
-                              <strong>${escapeHtml(item.web_module)}</strong>
-                              <p>${escapeHtml(item.web_change)}</p>
-                              <div class="brief-chip-row">
-                                ${item.web_data_points.map((point) => `<span class="brief-chip">${escapeHtml(point)}</span>`).join("")}
-                              </div>
-                            </div>
-                          </div>
+                          ${
+                            sharedPlan
+                              ? `
+                                <div class="event-route">
+                                  <span class="route-tag">建议入口</span>
+                                  <strong>${escapeHtml(item.app_module)}</strong>
+                                  <span class="route-divider">/</span>
+                                  <strong>${escapeHtml(item.web_module)}</strong>
+                                </div>
+                              `
+                              : `
+                                <div class="event-compare compact-brief">
+                                  <div class="event-brief app-brief">
+                                    <span>APP</span>
+                                    <strong>${escapeHtml(item.app_module)}</strong>
+                                    <p>${escapeHtml(item.app_change)}</p>
+                                    <div class="brief-chip-row">
+                                      ${item.app_data_points.map((point) => `<span class="brief-chip">${escapeHtml(point)}</span>`).join("")}
+                                    </div>
+                                  </div>
+                                  <div class="event-brief web-brief">
+                                    <span>Web</span>
+                                    <strong>${escapeHtml(item.web_module)}</strong>
+                                    <p>${escapeHtml(item.web_change)}</p>
+                                    <div class="brief-chip-row">
+                                      ${item.web_data_points.map((point) => `<span class="brief-chip">${escapeHtml(point)}</span>`).join("")}
+                                    </div>
+                                  </div>
+                                </div>
+                              `
+                          }
                         </article>
                       `,
                     )
@@ -293,8 +376,8 @@ function renderSelectedDay() {
             }
           </div>
         </section>
-      `,
-    )
+      `;
+    })
     .join("");
 
   const citations = getFilterCitations(day);
