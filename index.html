@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>企业数据服务行业情报简报</title>
+    <title>企业数据服务行业情报日报</title>
     <meta
       name="description"
-      content="聚焦企业数据服务赛道的竞品动态、客户需求与发展机会，面向法律、金融尽调、合规审查与商机拓客场景。"
+      content="每日自动抓取企业数据服务赛道相关新闻，保留近15天历史，并将趋势解读落实到具体产品调整与新增模块建议。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,20 +20,24 @@
     <div class="page-shell">
       <header class="page-header">
         <div>
-          <p class="kicker">行业情报简报</p>
-          <h1>企业数据服务赛道重点观察</h1>
+          <p class="kicker">Daily Industry Brief</p>
+          <h1>企业数据服务行业情报日报</h1>
           <p class="subhead">
-            聚焦企查查所在赛道，围绕法律、金融尽调、合规审查与商机拓客场景，提炼本期可用于内部汇报的核心判断。
+            面向企查查相关业务场景，每日自动抓取竞品、客户需求与产品机会信号；默认展示当天更新，并可回看最近 15 天内的新闻与解读。
           </p>
         </div>
         <div class="header-meta">
           <div class="meta-item">
-            <span>更新日期</span>
-            <strong>2026-04-22</strong>
+            <span>更新频率</span>
+            <strong>每日自动更新</strong>
           </div>
           <div class="meta-item">
-            <span>适用对象</span>
-            <strong>业务汇报 / 竞品观察</strong>
+            <span>最近更新</span>
+            <strong id="generatedAt">加载中...</strong>
+          </div>
+          <div class="meta-item">
+            <span>回看范围</span>
+            <strong id="windowDays">最近 15 天</strong>
           </div>
         </div>
       </header>
@@ -41,54 +45,59 @@
       <main>
         <section class="hero panel panel-strong">
           <div class="hero-main">
-            <p class="kicker">核心判断</p>
-            <h2>赛道正在从“企业查询工具”竞争，转向“可信数据底座 + 持续尽调 + AI 工作流”竞争。</h2>
-            <p class="hero-text">
-              短期看，最强驱动力来自反洗钱、金融机构合规和受益所有人穿透等监管要求；中期看，事件驱动获客、供应链风险监控和行业解决方案将成为更容易形成付费的增长方向。
-            </p>
+            <p class="kicker">当日判断</p>
+            <h2 id="headline">正在加载日报内容...</h2>
+            <p class="hero-text" id="overview"></p>
+            <div class="summary-stats" id="summaryStats"></div>
           </div>
-          <div class="hero-aside">
-            <p class="aside-title">管理层快读</p>
+          <aside class="hero-aside">
+            <p class="aside-title">当日新增信号</p>
             <ul class="quick-list" id="quickList"></ul>
-          </div>
+          </aside>
         </section>
-
-        <section class="stats-grid" id="statsGrid"></section>
 
         <section class="panel section-panel">
           <div class="section-head">
             <div>
-              <p class="kicker">关键节点</p>
-              <h3>政策与市场时间点</h3>
+              <p class="kicker">Date Window</p>
+              <h3>查看最近 15 天</h3>
             </div>
-            <p class="section-note">这三类时间点决定了客户对持续尽调和监控类产品的预算优先级。</p>
+            <p class="section-note">点击日期切换当天新增新闻和近 7 天滚动趋势解读。</p>
           </div>
-          <div class="timeline" id="timeline"></div>
+          <div class="date-tabs" id="dateTabs"></div>
         </section>
 
-        <section class="focus-stack" id="focusStack"></section>
-
-        <section class="two-col">
-          <section class="panel section-panel">
-            <div class="section-head">
-              <div>
-                <p class="kicker">行动建议</p>
-                <h3>建议优先推进的三件事</h3>
-              </div>
+        <section class="panel section-panel">
+          <div class="section-head">
+            <div>
+              <p class="kicker">Trend Decode</p>
+              <h3>最近趋势总结解读</h3>
             </div>
-            <div class="action-list" id="actionList"></div>
-          </section>
-
-          <section class="panel section-panel">
-            <div class="section-head">
-              <div>
-                <p class="kicker">来源索引</p>
-                <h3>本页使用的重点公开来源</h3>
-              </div>
-            </div>
-            <div class="source-list" id="sourceList"></div>
-          </section>
+            <p class="section-note">不是停留在新闻本身，而是直接落实到产品该怎么改、该新增什么模块。</p>
+          </div>
+          <div class="trend-grid" id="trendGrid"></div>
         </section>
+
+        <section class="panel section-panel">
+          <div class="section-head">
+            <div>
+              <p class="kicker">Product Actions</p>
+              <h3>建议优先调整的产品模块</h3>
+            </div>
+            <p class="section-note">优先展示应该新增的功能形态，以及页面里需要呈现的数据内容。</p>
+          </div>
+          <div class="action-grid" id="actionGrid"></div>
+        </section>
+
+        <section class="news-sections" id="newsSections"></section>
+
+        <footer class="citation-footer">
+          <div class="citation-head">
+            <p class="kicker">Citations</p>
+            <h3>引用来源</h3>
+          </div>
+          <div class="citation-list" id="citationList"></div>
+        </footer>
       </main>
     </div>
 
