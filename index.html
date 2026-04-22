@@ -3,161 +3,91 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>行业情报雷达 | 企业数据服务</title>
+    <title>企业数据服务行业情报简报</title>
     <meta
       name="description"
-      content="聚焦企业数据服务赛道的竞品动作、客户需求与增长机会，覆盖法律、金融尽调、合规审查、供应链风控与商机拓客。"
+      content="聚焦企业数据服务赛道的竞品动态、客户需求与发展机会，面向法律、金融尽调、合规审查与商机拓客场景。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div class="page-shell">
-      <header class="topbar">
-        <div class="brand-lockup">
-          <div class="brand-mark">IR</div>
-          <div>
-            <p class="eyebrow">行业情报雷达</p>
-            <h1>企业数据服务赛道观察台</h1>
-          </div>
+      <header class="page-header">
+        <div>
+          <p class="kicker">行业情报简报</p>
+          <h1>企业数据服务赛道重点观察</h1>
+          <p class="subhead">
+            聚焦企查查所在赛道，围绕法律、金融尽调、合规审查与商机拓客场景，提炼本期可用于内部汇报的核心判断。
+          </p>
         </div>
-        <div class="update-chip">
-          <span>更新于</span>
-          <strong>2026-04-22</strong>
-          <span>Asia/Shanghai</span>
+        <div class="header-meta">
+          <div class="meta-item">
+            <span>更新日期</span>
+            <strong>2026-04-22</strong>
+          </div>
+          <div class="meta-item">
+            <span>适用对象</span>
+            <strong>业务汇报 / 竞品观察</strong>
+          </div>
         </div>
       </header>
 
       <main>
-        <section class="hero">
-          <div class="hero-copy panel panel-lg">
-            <p class="eyebrow">一句话判断</p>
-            <h2>
-              行业正在从“查企业”竞争，切换到“可信数据底座 + AI 工作流 +
-              持续监控 + 垂类解决方案”竞争。
-            </h2>
-            <p class="lead">
-              面向法律、金融尽调、合规审查与商机拓客的客户，购买理由正从一次性查询，转向持续尽调、事件驱动获客、受益所有人穿透、可审计 AI 报告与供应链风险预警。
+        <section class="hero panel panel-strong">
+          <div class="hero-main">
+            <p class="kicker">核心判断</p>
+            <h2>赛道正在从“企业查询工具”竞争，转向“可信数据底座 + 持续尽调 + AI 工作流”竞争。</h2>
+            <p class="hero-text">
+              短期看，最强驱动力来自反洗钱、金融机构合规和受益所有人穿透等监管要求；中期看，事件驱动获客、供应链风险监控和行业解决方案将成为更容易形成付费的增长方向。
             </p>
-            <div class="hero-tags">
-              <span>法律服务</span>
-              <span>金融尽调</span>
-              <span>合规审查</span>
-              <span>供应链风控</span>
-              <span>商机拓客</span>
-              <span>AI Agent</span>
-            </div>
           </div>
-
-          <div class="hero-summary panel">
-            <p class="eyebrow">本期结论</p>
-            <ul class="summary-list">
-              <li>监管拉力最强：反洗钱、受益所有人、金融机构合规要求共同抬升持续尽调需求。</li>
-              <li>产品竞争升级：企查查、启信慧眼、D&amp;B、Bloomberg 都在往 AI 原生工作流前进。</li>
-              <li>拓客方式变化：从静态名单，转向基于中标、扩产、迁移、资质与风险事件的动态线索。</li>
-              <li>国际对标已验证：可信数据 + AI 摘要/问答 + 行业包，是可复制的商业化方向。</li>
-            </ul>
+          <div class="hero-aside">
+            <p class="aside-title">管理层快读</p>
+            <ul class="quick-list" id="quickList"></ul>
           </div>
         </section>
 
-        <section class="score-grid" id="scoreGrid"></section>
+        <section class="stats-grid" id="statsGrid"></section>
 
-        <section class="radar-wrap panel panel-lg">
+        <section class="panel section-panel">
           <div class="section-head">
             <div>
-              <p class="eyebrow">Radar Board</p>
-              <h3>公开信号分布</h3>
+              <p class="kicker">关键节点</p>
+              <h3>政策与市场时间点</h3>
             </div>
-            <p class="section-note">
-              内圈代表立即布局，中圈代表 6-12 个月重点跟进，外圈代表持续观察。
-            </p>
+            <p class="section-note">这三类时间点决定了客户对持续尽调和监控类产品的预算优先级。</p>
           </div>
-
-          <div class="radar-layout">
-            <div class="radar-board" id="radarBoard" aria-label="行业情报雷达图"></div>
-            <div class="radar-legend">
-              <div class="legend-block">
-                <p class="legend-title">象限</p>
-                <ul>
-                  <li><span class="dot dot-ai"></span>AI 数据底座</li>
-                  <li><span class="dot dot-demand"></span>合规与尽调</li>
-                  <li><span class="dot dot-growth"></span>增长与拓客</li>
-                  <li><span class="dot dot-benchmark"></span>全球对标</li>
-                </ul>
-              </div>
-              <div class="legend-block">
-                <p class="legend-title">筛选</p>
-                <div class="filter-row" id="filterRow"></div>
-              </div>
-              <div class="legend-block">
-                <p class="legend-title">说明</p>
-                <p class="mini-note">
-                  站内“机会判断”和“分数”是基于截至 2026-04-22 的公开材料做的研判，用来辅助产品和销售优先级，不代表官方结论。
-                </p>
-              </div>
-            </div>
-          </div>
+          <div class="timeline" id="timeline"></div>
         </section>
 
-        <section class="content-grid">
-          <section class="panel panel-lg">
+        <section class="focus-stack" id="focusStack"></section>
+
+        <section class="two-col">
+          <section class="panel section-panel">
             <div class="section-head">
               <div>
-                <p class="eyebrow">Signals Feed</p>
-                <h3>近期重点信号</h3>
+                <p class="kicker">行动建议</p>
+                <h3>建议优先推进的三件事</h3>
               </div>
-              <p class="section-note" id="feedCount"></p>
             </div>
-            <div class="signals-feed" id="signalsFeed"></div>
+            <div class="action-list" id="actionList"></div>
           </section>
 
-          <aside class="sidebar-stack">
-            <section class="panel">
-              <div class="section-head">
-                <div>
-                  <p class="eyebrow">Jobs To Be Done</p>
-                  <h3>客户现在最想买什么</h3>
-                </div>
+          <section class="panel section-panel">
+            <div class="section-head">
+              <div>
+                <p class="kicker">来源索引</p>
+                <h3>本页使用的重点公开来源</h3>
               </div>
-              <div class="stack-list" id="jobsList"></div>
-            </section>
-
-            <section class="panel">
-              <div class="section-head">
-                <div>
-                  <p class="eyebrow">Opportunity Map</p>
-                  <h3>值得优先下注的方向</h3>
-                </div>
-              </div>
-              <div class="stack-list" id="opportunityList"></div>
-            </section>
-
-            <section class="panel">
-              <div class="section-head">
-                <div>
-                  <p class="eyebrow">Watchlist</p>
-                  <h3>未来 90 天建议持续盯防</h3>
-                </div>
-              </div>
-              <div class="stack-list" id="watchList"></div>
-            </section>
-          </aside>
-        </section>
-
-        <section class="panel panel-lg sources-panel">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow">Source Ledger</p>
-              <h3>来源索引</h3>
             </div>
-            <p class="section-note">优先使用公开产品页、官方材料、监管网站与主流媒体可验证信息。</p>
-          </div>
-          <div class="sources-list" id="sourcesList"></div>
+            <div class="source-list" id="sourceList"></div>
+          </section>
         </section>
       </main>
     </div>
