@@ -1,64 +1,45 @@
 {
-  "generated_at": "2026-11-06T15:57:51+08:00",
-  "generated_label": "2026-11-06 15:57",
+  "generated_at": "2026-11-07T15:14:56+08:00",
+  "generated_label": "2026-11-07 15:14",
   "window_days": 15,
-  "default_date": "2026-11-06",
+  "default_date": "2026-11-07",
   "rolling_summary": {
-    "headline": "最近 15 天趋势总结：事件驱动拓客 仍是企查查最优先跟进方向",
-    "overview": "最近 15 天共识别 20 条高相关信号。当前最值得优先投入的是把 事件驱动拓客 落到企查查 APP 的高频提醒和企查查 Web 的标准工作台。",
+    "headline": "最近 15 天趋势总结：AI 工作流化 仍是企查查最优先跟进方向",
+    "overview": "最近 15 天共识别 14 条高相关信号。当前最值得优先投入的是把 AI 工作流化 落到企查查 APP 的高频提醒和企查查 Web 的标准工作台。",
     "key_points": [
-      "近 15 天内，事件驱动拓客 是最密集出现的主题。",
-      "竞品/对标产品信号 4 条，客户需求/政策信号 5 条，事件机会 11 条。",
+      "近 15 天内，AI 工作流化 是最密集出现的主题。",
+      "竞品/对标产品信号 4 条，客户需求/政策信号 4 条，事件机会 6 条。",
       "建议把移动端聚焦提醒与跟进，把 Web 端聚焦工作台、筛选和批量导出。"
     ],
     "counts": {
-      "all": 20,
+      "all": 14,
       "competitor": 4,
-      "demand": 5,
-      "opportunity": 11
+      "demand": 4,
+      "opportunity": 6
     },
     "trends": [
       {
-        "theme": "事件驱动拓客",
-        "signal_count": 10,
-        "summary": "中标、项目启动、资质变化和产业投资等事件，更适合作为高命中线索入口，名单式拓客的重要性在下降。",
-        "app_change": "APP 增加商机雷达流，按行业或区域推送中标、扩产、资质变化和项目启动等事件。",
+        "theme": "AI 工作流化",
+        "signal_count": 6,
+        "summary": "近 15 天多条信号都在强调 AI 调用、工作台和结构化输出，行业竞争焦点正在从查询能力转向可直接嵌入业务流。",
+        "app_change": "在企业详情页增加常驻 AI 助手入口，支持一键生成风险摘要、控制权结论和追问卡片。",
         "app_data_points": [
-          "中标动态",
-          "资质变化",
-          "项目启动",
-          "区域迁移与招聘信号"
+          "企业基础档案",
+          "风险摘要",
+          "控制权结构",
+          "关键变更时间线"
         ],
-        "web_change": "Web 端强化事件筛选、批量导出和跟进名单管理，把商机发现从名单查询升级为事件流。",
+        "web_change": "把 Web 查询页升级为多标签工作台，突出来源引用、结构化输出、批量对比和协作批注。",
         "web_data_points": [
-          "招投标动态",
-          "中标企业清单",
-          "融资与扩产事件",
-          "批量导出名单"
-        ]
-      },
-      {
-        "theme": "供应链与采购风险",
-        "signal_count": 9,
-        "summary": "供应商准入、采购合规和关系风险预警正在成为更明确的企业需求，适合沉淀成持续订阅类产品。",
-        "app_change": "APP 首页增加供应商预警卡片，突出异常中标、处罚、关系冲突和上下游变化提醒。",
-        "app_data_points": [
-          "异常中标提醒",
-          "供应商处罚摘要",
-          "关系冲突提示",
-          "上下游变化"
-        ],
-        "web_change": "在 Web 端新增采购风控台，支持供应商准入、利益冲突排查、关系图谱和批量核验。",
-        "web_data_points": [
-          "供应商关系网络",
-          "利益冲突提示",
-          "招投标记录",
-          "批量核验结果"
+          "来源引用链",
+          "结构化字段导出",
+          "批量企业对比",
+          "协作批注记录"
         ]
       },
       {
         "theme": "合规与持续尽调",
-        "signal_count": 6,
+        "signal_count": 5,
         "summary": "反洗钱、客户尽调和受益所有人相关信号仍在升温，客户更需要持续监控和留痕，而不是一次性查询结果。",
         "app_change": "在 APP 端强化企业风险订阅、异常变更提醒和一键保存尽调结论，满足移动场景下的持续跟进。",
         "app_data_points": [
@@ -74,52 +55,48 @@
           "关联风险主体",
           "监控留痕日志"
         ]
+      },
+      {
+        "theme": "事件驱动拓客",
+        "signal_count": 5,
+        "summary": "中标、项目启动、资质变化和产业投资等事件，更适合作为高命中线索入口，名单式拓客的重要性在下降。",
+        "app_change": "APP 增加商机雷达流，按行业或区域推送中标、扩产、资质变化和项目启动等事件。",
+        "app_data_points": [
+          "中标动态",
+          "资质变化",
+          "项目启动",
+          "区域迁移与招聘信号"
+        ],
+        "web_change": "Web 端强化事件筛选、批量导出和跟进名单管理，把商机发现从名单查询升级为事件流。",
+        "web_data_points": [
+          "招投标动态",
+          "中标企业清单",
+          "融资与扩产事件",
+          "批量导出名单"
+        ]
       }
     ],
     "actions": [
       {
-        "title": "事件驱动拓客",
+        "title": "AI 工作流化",
         "app": {
-          "module": "APP 商机雷达",
-          "change": "APP 增加商机雷达流，按行业或区域推送中标、扩产、资质变化和项目启动等事件。",
+          "module": "APP 智能尽调助手",
+          "change": "在企业详情页增加常驻 AI 助手入口，支持一键生成风险摘要、控制权结论和追问卡片。",
           "data_points": [
-            "中标动态",
-            "资质变化",
-            "项目启动",
-            "区域迁移与招聘信号"
+            "企业基础档案",
+            "风险摘要",
+            "控制权结构",
+            "关键变更时间线"
           ]
         },
         "web": {
-          "module": "Web 事件线索筛选台",
-          "change": "Web 端强化事件筛选、批量导出和跟进名单管理，把商机发现从名单查询升级为事件流。",
+          "module": "Web AI 尽调工作台",
+          "change": "把 Web 查询页升级为多标签工作台，突出来源引用、结构化输出、批量对比和协作批注。",
           "data_points": [
-            "招投标动态",
-            "中标企业清单",
-            "融资与扩产事件",
-            "批量导出名单"
-          ]
-        }
-      },
-      {
-        "title": "供应链与采购风险",
-        "app": {
-          "module": "APP 供应商预警卡",
-          "change": "APP 首页增加供应商预警卡片，突出异常中标、处罚、关系冲突和上下游变化提醒。",
-          "data_points": [
-            "异常中标提醒",
-            "供应商处罚摘要",
-            "关系冲突提示",
-            "上下游变化"
-          ]
-        },
-        "web": {
-          "module": "Web 采购风控台",
-          "change": "在 Web 端新增采购风控台，支持供应商准入、利益冲突排查、关系图谱和批量核验。",
-          "data_points": [
-            "供应商关系网络",
-            "利益冲突提示",
-            "招投标记录",
-            "批量核验结果"
+            "来源引用链",
+            "结构化字段导出",
+            "批量企业对比",
+            "协作批注记录"
           ]
         }
       },
@@ -145,10 +122,72 @@
             "监控留痕日志"
           ]
         }
+      },
+      {
+        "title": "事件驱动拓客",
+        "app": {
+          "module": "APP 商机雷达",
+          "change": "APP 增加商机雷达流，按行业或区域推送中标、扩产、资质变化和项目启动等事件。",
+          "data_points": [
+            "中标动态",
+            "资质变化",
+            "项目启动",
+            "区域迁移与招聘信号"
+          ]
+        },
+        "web": {
+          "module": "Web 事件线索筛选台",
+          "change": "Web 端强化事件筛选、批量导出和跟进名单管理，把商机发现从名单查询升级为事件流。",
+          "data_points": [
+            "招投标动态",
+            "中标企业清单",
+            "融资与扩产事件",
+            "批量导出名单"
+          ]
+        }
       }
     ]
   },
   "days": [
+    {
+      "date": "2026-11-07",
+      "label": "11月7日",
+      "weekday": "周六",
+      "counts": {
+        "all": 0,
+        "competitor": 0,
+        "demand": 0,
+        "opportunity": 0
+      },
+      "headline": "11月7日暂无高相关新增，建议重点查看近 15 天趋势总结",
+      "quick_points": [
+        "当日未发现高相关新增事件。"
+      ],
+      "sections": [
+        {
+          "key": "competitor",
+          "title": "竞品与对标产品动作",
+          "description": "聚焦竞品近期释放的产品动作，以及对企查查 APP / Web 的直接启发。",
+          "empty": "当天未抓取到高相关的竞品或对标产品动作。",
+          "items": []
+        },
+        {
+          "key": "demand",
+          "title": "客户需求与政策信号",
+          "description": "聚焦合规、尽调和监管要求，判断哪些能力更值得优先投入。",
+          "empty": "当天未抓取到高相关的客户需求或政策信号。",
+          "items": []
+        },
+        {
+          "key": "opportunity",
+          "title": "事件机会与可新增模块",
+          "description": "聚焦招投标、项目、中标和供应链事件，判断能否沉淀成企查查的新入口或新模块。",
+          "empty": "当天未抓取到高相关的产品机会信号。",
+          "items": []
+        }
+      ],
+      "citations": []
+    },
     {
       "date": "2026-11-06",
       "label": "11月6日",
@@ -255,14 +294,14 @@
       "label": "11月5日",
       "weekday": "周四",
       "counts": {
-        "all": 4,
+        "all": 1,
         "competitor": 0,
         "demand": 0,
-        "opportunity": 4
+        "opportunity": 1
       },
       "headline": "11月5日新增以商机/事件信号为主，适合转成企查查 APP 商机提醒与 Web 线索筛选",
       "quick_points": [
-        "当日新增 4 条可直接转成产品模块的事件机会。"
+        "当日新增 1 条可直接转成产品模块的事件机会。"
       ],
       "sections": [
         {
@@ -307,75 +346,6 @@
                 "中标企业清单",
                 "融资与扩产事件"
               ]
-            },
-            {
-              "title": "宏盛华源(601096):宏盛华源产品中标公告",
-              "source": "中财网",
-              "source_url": "https://www.cfi.net.cn",
-              "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9vX05wbjMtVWxZMndXZjBPcmNSQTBxb3NNZ2xPUjlCNDNraHhyTmRXb1pYZWo1NlJ2dERJSWoxanJZNnBRT2JvWUI5OUFfVmswZ25vcGxB?oc=5",
-              "published_at": "2026-11-05T19:22:56+08:00",
-              "published_label": "11-05 19:22",
-              "product_takeaway": "建议把企查查 APP 做成事件提醒入口，把 Web 做成筛选和批量跟进主阵地。",
-              "app_change": "APP 增加商机雷达流，按行业或区域推送中标、扩产、资质变化和项目启动等事件。",
-              "web_change": "Web 端强化事件筛选、批量导出和跟进名单管理，把商机发现从名单查询升级为事件流。",
-              "app_module": "APP 商机雷达",
-              "web_module": "Web 事件线索筛选台",
-              "app_data_points": [
-                "中标动态",
-                "资质变化",
-                "项目启动"
-              ],
-              "web_data_points": [
-                "招投标动态",
-                "中标企业清单",
-                "融资与扩产事件"
-              ]
-            },
-            {
-              "title": "新联电子(002546):重大经营合同中标",
-              "source": "中财网",
-              "source_url": "https://www.cfi.net.cn",
-              "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0xQi1zd1JUWjNUM3AtSWZ1LVNkOVVQMklrMUQzTFhYWGp4YmlqVGlLanRoN25wV21LWmRRbmdhV2huRWw2amphRjdNMjFPcXZnbWI5NWdB?oc=5",
-              "published_at": "2026-11-05T11:46:33+08:00",
-              "published_label": "11-05 11:46",
-              "product_takeaway": "建议把企查查 APP 做成事件提醒入口，把 Web 做成筛选和批量跟进主阵地。",
-              "app_change": "APP 增加商机雷达流，按行业或区域推送中标、扩产、资质变化和项目启动等事件。",
-              "web_change": "Web 端强化事件筛选、批量导出和跟进名单管理，把商机发现从名单查询升级为事件流。",
-              "app_module": "APP 商机雷达",
-              "web_module": "Web 事件线索筛选台",
-              "app_data_points": [
-                "中标动态",
-                "资质变化",
-                "项目启动"
-              ],
-              "web_data_points": [
-                "招投标动态",
-                "中标企业清单",
-                "融资与扩产事件"
-              ]
-            },
-            {
-              "title": "广交会观察：广货行天下创新商机 民企成外贸增长主力",
-              "source": "新导报",
-              "source_url": "https://www.xindb.com",
-              "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNUC1yMUlfTU5WQUVhcEU0VEpod2RBYm1tWFpjMEt0Q0pDSnU2V3FxbTZsVGtEc2IyYkludGFiVlowS2lXU3FVS0hpN0stU2dYVU5GR3hRR184aWpiNkFuYzBxMVN3YXVTcWxDZG1UbklUVXB0am9kRnpWOGkwN0paV2Vidw?oc=5",
-              "published_at": "2026-11-05T11:30:56+08:00",
-              "published_label": "11-05 11:30",
-              "product_takeaway": "建议把企查查 APP 做成事件提醒入口，把 Web 做成筛选和批量跟进主阵地。",
-              "app_change": "APP 增加商机雷达流，按行业或区域推送中标、扩产、资质变化和项目启动等事件。",
-              "web_change": "Web 端强化事件筛选、批量导出和跟进名单管理，把商机发现从名单查询升级为事件流。",
-              "app_module": "APP 商机雷达",
-              "web_module": "Web 事件线索筛选台",
-              "app_data_points": [
-                "中标动态",
-                "资质变化",
-                "项目启动"
-              ],
-              "web_data_points": [
-                "招投标动态",
-                "中标企业清单",
-                "融资与扩产事件"
-              ]
             }
           ]
         }
@@ -386,24 +356,6 @@
           "source": "东方财富",
           "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBrek5wR2tFWno3SU5DeTNERVpTbWtQbkxoSEV2UmZQRTlhdGYwOVdwYUJRZDBERnVYOVhnNXp4cEV5R1RsR3hRRk5QZVZ0Vm1vRzlpYXV5UzRlRjJhZnN6U09zQlVrZw?oc=5",
           "source_url": "https://finance.eastmoney.com"
-        },
-        {
-          "title": "宏盛华源(601096):宏盛华源产品中标公告",
-          "source": "中财网",
-          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9vX05wbjMtVWxZMndXZjBPcmNSQTBxb3NNZ2xPUjlCNDNraHhyTmRXb1pYZWo1NlJ2dERJSWoxanJZNnBRT2JvWUI5OUFfVmswZ25vcGxB?oc=5",
-          "source_url": "https://www.cfi.net.cn"
-        },
-        {
-          "title": "新联电子(002546):重大经营合同中标",
-          "source": "中财网",
-          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0xQi1zd1JUWjNUM3AtSWZ1LVNkOVVQMklrMUQzTFhYWGp4YmlqVGlLanRoN25wV21LWmRRbmdhV2huRWw2amphRjdNMjFPcXZnbWI5NWdB?oc=5",
-          "source_url": "https://www.cfi.net.cn"
-        },
-        {
-          "title": "广交会观察：广货行天下创新商机 民企成外贸增长主力",
-          "source": "新导报",
-          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNUC1yMUlfTU5WQUVhcEU0VEpod2RBYm1tWFpjMEt0Q0pDSnU2V3FxbTZsVGtEc2IyYkludGFiVlowS2lXU3FVS0hpN0stU2dYVU5GR3hRR184aWpiNkFuYzBxMVN3YXVTcWxDZG1UbklUVXB0am9kRnpWOGkwN0paV2Vidw?oc=5",
-          "source_url": "https://www.xindb.com"
         }
       ]
     },
@@ -412,14 +364,14 @@
       "label": "11月4日",
       "weekday": "周三",
       "counts": {
-        "all": 2,
+        "all": 1,
         "competitor": 0,
         "demand": 0,
-        "opportunity": 2
+        "opportunity": 1
       },
       "headline": "11月4日新增以商机/事件信号为主，适合转成企查查 APP 商机提醒与 Web 线索筛选",
       "quick_points": [
-        "当日新增 2 条可直接转成产品模块的事件机会。"
+        "当日新增 1 条可直接转成产品模块的事件机会。"
       ],
       "sections": [
         {
@@ -442,29 +394,6 @@
           "description": "聚焦招投标、项目、中标和供应链事件，判断能否沉淀成企查查的新入口或新模块。",
           "empty": "当天未抓取到高相关的产品机会信号。",
           "items": [
-            {
-              "title": "友讯达中标国家电网1.96亿元设备项目，金额占去年营收近24.56%_公司新闻_财经",
-              "source": "证券之星",
-              "source_url": "https://wap.stockstar.com",
-              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5mX0E3SjViWFN2ZE5QbTMyWnRNVTB4bHFndWRlMjhITmdlVFRsdUdFMUQyMnIxX2xySXYzVjdNZTd3Vm1sZEctam1pbnhJNzJ6ZlpfeHkxTUhzM0pDWkhWMA?oc=5",
-              "published_at": "2026-11-04T16:36:08+08:00",
-              "published_label": "11-04 16:36",
-              "product_takeaway": "建议把企查查 APP 做成事件提醒入口，把 Web 做成筛选和批量跟进主阵地。",
-              "app_change": "APP 增加商机雷达流，按行业或区域推送中标、扩产、资质变化和项目启动等事件。",
-              "web_change": "Web 端强化事件筛选、批量导出和跟进名单管理，把商机发现从名单查询升级为事件流。",
-              "app_module": "APP 商机雷达",
-              "web_module": "Web 事件线索筛选台",
-              "app_data_points": [
-                "中标动态",
-                "资质变化",
-                "项目启动"
-              ],
-              "web_data_points": [
-                "招投标动态",
-                "中标企业清单",
-                "融资与扩产事件"
-              ]
-            },
             {
               "title": "通光线缆：子公司提供虚假资料遭国网天津禁标两年，存被国网全品类暂停中标资格风险",
               "source": "ThePaper.cn",
@@ -493,12 +422,6 @@
       ],
       "citations": [
         {
-          "title": "友讯达中标国家电网1.96亿元设备项目，金额占去年营收近24.56%_公司新闻_财经",
-          "source": "证券之星",
-          "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5mX0E3SjViWFN2ZE5QbTMyWnRNVTB4bHFndWRlMjhITmdlVFRsdUdFMUQyMnIxX2xySXYzVjdNZTd3Vm1sZEctam1pbnhJNzJ6ZlpfeHkxTUhzM0pDWkhWMA?oc=5",
-          "source_url": "https://wap.stockstar.com"
-        },
-        {
           "title": "通光线缆：子公司提供虚假资料遭国网天津禁标两年，存被国网全品类暂停中标资格风险",
           "source": "ThePaper.cn",
           "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE91WlhBSTF2RFMzZU9DT1k3SFYxWExvcHlFTGVOMzY3T2JEZmNyRUVLWnNIcWFfUG9NTHR6NzczQV9YS0Yzc1pKRlVVV0h2cEZOMjVreDlBZjkwR2x0ZzZUMQ?oc=5",
@@ -511,15 +434,15 @@
       "label": "11月3日",
       "weekday": "周二",
       "counts": {
-        "all": 4,
+        "all": 3,
         "competitor": 1,
         "demand": 0,
-        "opportunity": 3
+        "opportunity": 2
       },
       "headline": "11月3日新增以商机/事件信号为主，适合转成企查查 APP 商机提醒与 Web 线索筛选",
       "quick_points": [
         "当日新增 1 条竞品 / 对标产品动作。",
-        "当日新增 3 条可直接转成产品模块的事件机会。"
+        "当日新增 2 条可直接转成产品模块的事件机会。"
       ],
       "sections": [
         {
@@ -531,8 +454,8 @@
             {
               "title": "华为鸿蒙走进企查查研发总部，企查查加快数据产品研发",
               "source": "搜狐网",
-              "source_url": "https://m.sohu.com",
-              "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPMGViN19tcjdnbFdhbDd0STE0Z2MxakdMRll4UV95bC1pQ2lFN3RjU3V2NXVBekxLd3ZmSWdZQWg5cjZJYTBXZWJJajYxRVlucC1wQ0ZCdU5NU3JfWGJZN3FuanZaQjVDajdNTjZ2YXpPbzl2OHJEa2NJTzFJZ1RIMDhPYlBETmVoa1MyUw?oc=5",
+              "source_url": "https://www.sohu.com",
+              "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBPSUh5Zy1JV0dxWkgtV2drXzZ6bUZZNnU1Qzd3RnhJZHZmZ2FrTlIybWJLSVU5T1g5enFOaVBac3dOdFB0aEdZRkNjNmFLQmo3UU13NEpB?oc=5",
               "published_at": "2026-11-03T21:40:01+08:00",
               "published_label": "11-03 21:40",
               "product_takeaway": "建议 APP 负责轻量展示，Web 负责场景方案和复杂报告。",
@@ -611,29 +534,6 @@
                 "结构化字段导出",
                 "批量企业对比"
               ]
-            },
-            {
-              "title": "给招投标装上“数字探头”！上海紧盯工程建设领域推进公权力大数据监督",
-              "source": "上观新闻",
-              "source_url": "https://www.jfdaily.com",
-              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBhdlA5WG9laHVpWmVPdUJYTlRRSXFJaHoxUExuc0Rlc2F5b3ZEVE1odVU3cy05dlQzend1LWM3UEdFUXBUZ2xYT01udDc0aDVmakd6UTZpbk0wQQ?oc=5",
-              "published_at": "2026-11-03T08:34:00+08:00",
-              "published_label": "11-03 08:34",
-              "product_takeaway": "建议把采购风控放在 Web 端形成完整工作台，APP 侧承接高频预警。",
-              "app_change": "APP 首页增加供应商预警卡片，突出异常中标、处罚、关系冲突和上下游变化提醒。",
-              "web_change": "在 Web 端新增采购风控台，支持供应商准入、利益冲突排查、关系图谱和批量核验。",
-              "app_module": "APP 供应商预警卡",
-              "web_module": "Web 采购风控台",
-              "app_data_points": [
-                "异常中标提醒",
-                "供应商处罚摘要",
-                "关系冲突提示"
-              ],
-              "web_data_points": [
-                "供应商关系网络",
-                "利益冲突提示",
-                "招投标记录"
-              ]
             }
           ]
         }
@@ -652,16 +552,10 @@
           "source_url": "https://www.thepaper.cn"
         },
         {
-          "title": "给招投标装上“数字探头”！上海紧盯工程建设领域推进公权力大数据监督",
-          "source": "上观新闻",
-          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBhdlA5WG9laHVpWmVPdUJYTlRRSXFJaHoxUExuc0Rlc2F5b3ZEVE1odVU3cy05dlQzend1LWM3UEdFUXBUZ2xYT01udDc0aDVmakd6UTZpbk0wQQ?oc=5",
-          "source_url": "https://www.jfdaily.com"
-        },
-        {
           "title": "华为鸿蒙走进企查查研发总部，企查查加快数据产品研发",
           "source": "搜狐网",
-          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPMGViN19tcjdnbFdhbDd0STE0Z2MxakdMRll4UV95bC1pQ2lFN3RjU3V2NXVBekxLd3ZmSWdZQWg5cjZJYTBXZWJJajYxRVlucC1wQ0ZCdU5NU3JfWGJZN3FuanZaQjVDajdNTjZ2YXpPbzl2OHJEa2NJTzFJZ1RIMDhPYlBETmVoa1MyUw?oc=5",
-          "source_url": "https://m.sohu.com"
+          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBPSUh5Zy1JV0dxWkgtV2drXzZ6bUZZNnU1Qzd3RnhJZHZmZ2FrTlIybWJLSVU5T1g5enFOaVBac3dOdFB0aEdZRkNjNmFLQmo3UU13NEpB?oc=5",
+          "source_url": "https://www.sohu.com"
         }
       ]
     },
@@ -1078,14 +972,14 @@
       "label": "10月28日",
       "weekday": "周三",
       "counts": {
-        "all": 1,
+        "all": 0,
         "competitor": 0,
-        "demand": 1,
+        "demand": 0,
         "opportunity": 0
       },
-      "headline": "10月28日新增以合规与尽调需求为主，适合强化企查查 Web 监控台与 APP 订阅提醒",
+      "headline": "10月28日暂无高相关新增，建议重点查看近 15 天趋势总结",
       "quick_points": [
-        "当日新增 1 条客户需求与政策信号。"
+        "当日未发现高相关新增事件。"
       ],
       "sections": [
         {
@@ -1100,31 +994,7 @@
           "title": "客户需求与政策信号",
           "description": "聚焦合规、尽调和监管要求，判断哪些能力更值得优先投入。",
           "empty": "当天未抓取到高相关的客户需求或政策信号。",
-          "items": [
-            {
-              "title": "央行66张罚单密集落地，全部涉及反洗钱 共罚没约6528.5万元，旧罚则温和收官，新法利剑悬顶",
-              "source": "finance.sina.com.cn",
-              "source_url": "https://finance.sina.cn",
-              "link": "https://news.google.com/rss/articles/CBMilgRBVV95cUxOd0kzdFQ2QUJlU2M1Uk1tUVVYZVRDT0swMkhodnpOS2t6VmZjN0x4RWRIeUcyMDU5dC1mazlkZFpnLXo4dENoZE9qa0NSMU1nV1BpcS1YRFBWWU83VXlHc2o5OUF6RTBkRTFUY1hnX2wyNzZsMDV4SHFWOFFxVGt2bzl0a0huN0k5RUV0THhnb2pMQkV3SkRrR1NpX20ydnYyNlBuVmd5RmpCZl9LMlhWMjVScVc2UHFia1ZLWEdRUkViZkEwQUV2MGQyN3RlQTVUTzh1T3FFNWdQSG1jWTU5U2Z4SlVEZWhrLVVSTzNXYmRHLUktQ0lLTTU3WXZKLW9sMDc2RHpETzlIVkhFOTIyaHNTRGVDWVVxM2h2VDFWVWd2ZkJHNDRRYVFVd2Q1QTdEN2dNZW15blBGZ0RfZGZnYS1PTjc0UFIxUlNldGRURE5iMHluMTZGSnptQ2VRcGdiZE50akI0bXlwM0ZyM04xV01zdVdRYXNSSFljZllOb3RNblZEMnJMMXNOc2RQeXVKeGp0TndpUzBnZ0V3RVh5V1Z1elhySnlrVDUzLWtHcHFNVGlsd0wzVjUyUHVoemZ6LVBVQV8tSUN1Rkp1cGNIbm51bW1Mb2RTN3RoZG9yLVJObmRzc3JOc2pDcmhlbk9EckptSFBoRDZmcC1KcmZ0SjlTZ25pQ0x4S0ZVQlVKaWZzdUV6TWc?oc=5",
-              "published_at": "2026-10-28T08:07:45+08:00",
-              "published_label": "10-28 08:07",
-              "product_takeaway": "建议把合规场景做成企查查 Web 标准方案，并让 APP 承接订阅提醒和跟进动作。",
-              "app_change": "在 APP 端强化企业风险订阅、异常变更提醒和一键保存尽调结论，满足移动场景下的持续跟进。",
-              "web_change": "在 Web 端形成标准化尽调台，支持受益所有人穿透、处罚诉讼时间线、监控留痕和批量核验。",
-              "app_module": "APP 风险订阅与提醒",
-              "web_module": "Web 合规尽调监控台",
-              "app_data_points": [
-                "受益所有人链路",
-                "异常经营记录",
-                "处罚诉讼摘要"
-              ],
-              "web_data_points": [
-                "受益所有人穿透",
-                "处罚诉讼时间线",
-                "关联风险主体"
-              ]
-            }
-          ]
+          "items": []
         },
         {
           "key": "opportunity",
@@ -1134,14 +1004,7 @@
           "items": []
         }
       ],
-      "citations": [
-        {
-          "title": "央行66张罚单密集落地，全部涉及反洗钱 共罚没约6528.5万元，旧罚则温和收官，新法利剑悬顶",
-          "source": "finance.sina.com.cn",
-          "link": "https://news.google.com/rss/articles/CBMilgRBVV95cUxOd0kzdFQ2QUJlU2M1Uk1tUVVYZVRDT0swMkhodnpOS2t6VmZjN0x4RWRIeUcyMDU5dC1mazlkZFpnLXo4dENoZE9qa0NSMU1nV1BpcS1YRFBWWU83VXlHc2o5OUF6RTBkRTFUY1hnX2wyNzZsMDV4SHFWOFFxVGt2bzl0a0huN0k5RUV0THhnb2pMQkV3SkRrR1NpX20ydnYyNlBuVmd5RmpCZl9LMlhWMjVScVc2UHFia1ZLWEdRUkViZkEwQUV2MGQyN3RlQTVUTzh1T3FFNWdQSG1jWTU5U2Z4SlVEZWhrLVVSTzNXYmRHLUktQ0lLTTU3WXZKLW9sMDc2RHpETzlIVkhFOTIyaHNTRGVDWVVxM2h2VDFWVWd2ZkJHNDRRYVFVd2Q1QTdEN2dNZW15blBGZ0RfZGZnYS1PTjc0UFIxUlNldGRURE5iMHluMTZGSnptQ2VRcGdiZE50akI0bXlwM0ZyM04xV01zdVdRYXNSSFljZllOb3RNblZEMnJMMXNOc2RQeXVKeGp0TndpUzBnZ0V3RVh5V1Z1elhySnlrVDUzLWtHcHFNVGlsd0wzVjUyUHVoemZ6LVBVQV8tSUN1Rkp1cGNIbm51bW1Mb2RTN3RoZG9yLVJObmRzc3JOc2pDcmhlbk9EckptSFBoRDZmcC1KcmZ0SjlTZ25pQ0x4S0ZVQlVKaWZzdUV6TWc?oc=5",
-          "source_url": "https://finance.sina.cn"
-        }
-      ]
+      "citations": []
     },
     {
       "date": "2026-10-27",
@@ -1271,45 +1134,6 @@
         "opportunity": 0
       },
       "headline": "10月24日暂无高相关新增，建议重点查看近 15 天趋势总结",
-      "quick_points": [
-        "当日未发现高相关新增事件。"
-      ],
-      "sections": [
-        {
-          "key": "competitor",
-          "title": "竞品与对标产品动作",
-          "description": "聚焦竞品近期释放的产品动作，以及对企查查 APP / Web 的直接启发。",
-          "empty": "当天未抓取到高相关的竞品或对标产品动作。",
-          "items": []
-        },
-        {
-          "key": "demand",
-          "title": "客户需求与政策信号",
-          "description": "聚焦合规、尽调和监管要求，判断哪些能力更值得优先投入。",
-          "empty": "当天未抓取到高相关的客户需求或政策信号。",
-          "items": []
-        },
-        {
-          "key": "opportunity",
-          "title": "事件机会与可新增模块",
-          "description": "聚焦招投标、项目、中标和供应链事件，判断能否沉淀成企查查的新入口或新模块。",
-          "empty": "当天未抓取到高相关的产品机会信号。",
-          "items": []
-        }
-      ],
-      "citations": []
-    },
-    {
-      "date": "2026-10-23",
-      "label": "10月23日",
-      "weekday": "周五",
-      "counts": {
-        "all": 0,
-        "competitor": 0,
-        "demand": 0,
-        "opportunity": 0
-      },
-      "headline": "10月23日暂无高相关新增，建议重点查看近 15 天趋势总结",
       "quick_points": [
         "当日未发现高相关新增事件。"
       ],
